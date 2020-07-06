@@ -43,7 +43,8 @@ XPATH_PROFILE_SUBSCRIBED_TO_LIST = "//div[@class='PZuss']"
 XPATH_PROFILE_SUBSCRIBED_TO_LIST_ELEMENTS = "li"
 XPATH_PROFILE_SUBSCRIBED_TO_LIST_ELEMENTS_NAME = "div/div[1]/div[2]/div/a"
 
-XPATH_PROFILE_FOLLOW = "//div[@class='Y2E37']/button"
+XPATH_PROFILE_FOLLOW = "//div[@class='nZSzR']/button"
+XPATH_PROFILE_FOLLOW2 = "//div[@class='nZSzR']/div/span/span/button"
 
 
 # starts the driver and logs in
@@ -218,4 +219,7 @@ def get_following_list():
 
 
 def follow_profile():
-    browser.find_element_by_xpath(XPATH_PROFILE_FOLLOW).click()
+    try:
+        browser.find_element_by_xpath(XPATH_PROFILE_FOLLOW).click()
+    except NoSuchElementException:
+        browser.find_element_by_xpath(XPATH_PROFILE_FOLLOW2).click()
