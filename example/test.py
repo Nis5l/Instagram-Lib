@@ -7,7 +7,7 @@ instapy.start("username", "password", True)
 g = gender.GenderDetector()
 
 skip_male = False
-expand_todo = False
+expand_todo = True
 
 while True:
     try:
